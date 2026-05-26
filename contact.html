@@ -1,0 +1,227 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us â€“ SConnect Accessories</title>
+  <meta name="description" content="Get in touch with SConnect Accessories for product queries, bulk orders, warranty support or partnerships.">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- â”€â”€ NAVBAR â”€â”€ -->
+<nav id="navbar">
+  <a class="nav-logo" href="index.html">
+    <img src="photos/sconnects.jpg" alt="SConnect Mobile Accessories" class="nav-logo-img">
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="products.html">Products</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html" class="active">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <button class="nav-icon-btn" title="Search">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    </button>
+    <button class="nav-icon-btn nav-cart" onclick="toggleCart()" title="Cart">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+      <span class="cart-count" id="cartCount">0</span>
+    </button>
+    <a href="products.html" class="btn-nav">Shop Now</a>
+  </div>
+</nav>
+
+<!-- â”€â”€ CART DRAWER â”€â”€ -->
+<div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+<div class="cart-drawer" id="cartDrawer">
+  <div class="cart-header">
+    <h3>YOUR CART</h3>
+    <button class="cart-close" onclick="toggleCart()">âœ•</button>
+  </div>
+  <div class="cart-items" id="cartItems">
+    <div class="cart-empty">
+      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" opacity="0.3"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+      <p>Your cart is empty</p>
+    </div>
+  </div>
+  <div class="cart-footer">
+    <div class="cart-subtotal">
+      <span>Subtotal</span>
+      <strong id="cartTotal">â‚¹0</strong>
+    </div>
+    <button class="btn-checkout" onclick="checkout()">Proceed to Checkout â†’</button>
+  </div>
+</div>
+
+<!-- â”€â”€ TOAST â”€â”€ -->
+<div class="toast" id="toast"><span class="toast-icon">âœ“</span><span id="toastMsg"></span></div>
+
+<!-- â”€â”€ PAGE CONTENT â”€â”€ -->
+<div class="contact-page">
+
+  <div class="contact-hero">
+    <h1>GET IN <span>TOUCH</span></h1>
+    <p>We'd love to hear from you â€” product queries, bulk orders, or just say hello.</p>
+  </div>
+
+  <div class="contact-layout">
+
+    <!-- Contact Info -->
+    <div class="contact-info">
+      <h2>Contact Details</h2>
+
+      <div class="contact-item">
+        <div class="contact-icon">
+          <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <div>
+          <div class="contact-item-title">Address</div>
+          <div class="contact-item-val">Flat no.11 Satyanagar<br>O.U.Road Vidyanagar , Hyderabad â€“ 500044</div>
+        </div>
+      </div>
+
+      <div class="contact-item">
+        <div class="contact-icon">
+          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.22 2.18 2 2 0 012.18 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.29 6.29l1.28-1.28a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        </div>
+        <div>
+          <div class="contact-item-title">Phone</div>
+          <div class="contact-item-val">+91 9948991992</div>
+        </div>
+      </div>
+
+      <div class="contact-item">
+        <div class="contact-icon">
+          <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </div>
+        <div>
+          <div class="contact-item-title">Email</div>
+          <div class="contact-item-val">srinivasmyana22@gmail.com</div>
+        </div>
+      </div>
+
+      <div class="contact-item">
+        <div class="contact-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <div>
+          <div class="contact-item-title">Support Hours</div>
+          <div class="contact-item-val">Mon â€“ Sat: 9 AM â€“ 7 PM IST</div>
+        </div>
+      </div>
+
+      <div class="contact-socials">
+        <h4>Follow Us</h4>
+        <div class="social-row">
+          <a class="social-btn" href="#" aria-label="LinkedIn">In</a>
+          <a class="social-btn" href="#" aria-label="Facebook">Fb</a>
+          <a class="social-btn" href="#" aria-label="YouTube">Yt</a>
+          <a class="social-btn" href="#" aria-label="Twitter">Tw</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact Form -->
+    <div class="contact-form-wrap">
+      <h2>Send a Message</h2>
+
+      <div class="form-row">
+        <div class="form-group"><label>First Name</label><input type="text" id="firstName" placeholder="Rahul"></div>
+        <div class="form-group"><label>Last Name</label><input type="text" id="lastName" placeholder="Sharma"></div>
+      </div>
+      <div class="form-group"><label>Email Address</label><input type="email" id="email" placeholder="rahul@example.com"></div>
+      <div class="form-group"><label>Phone Number</label><input type="tel" id="phone" placeholder="+91 98765 43210"></div>
+      <div class="form-group">
+        <label>Subject</label>
+        <select id="subject">
+          <option>Product Inquiry</option>
+          <option>Bulk / Wholesale Order</option>
+          <option>Warranty &amp; Returns</option>
+          <option>Track My Order</option>
+          <option>Partnership</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="form-group"><label>Message</label><textarea id="message" placeholder="Tell us how we can help you..."></textarea></div>
+
+      <button class="btn-submit" onclick="submitForm()">
+        Send Message
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+      </button>
+
+      <div class="form-success" id="formSuccess">âœ“ Message sent! We'll get back to you within 2 hours.</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- â”€â”€ FOOTER â”€â”€ -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="logo-wrap">
+        <img src="photos/sconnects.jpg" alt="SConnect Mobile Accessories" class="footer-logo-img">
+      </div>
+      <p>India's trusted mobile accessories brand. Connecting people to what matters most â€” quality, affordability &amp; reliability.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Products</h4>
+      <ul>
+        <li><a href="products.html?cat=Bluetooth">Bluetooth Earphones</a></li>
+        <li><a href="products.html?cat=WiredEarphones">Wired Earphones</a></li>
+        <li><a href="products.html?cat=Cables">Cables</a></li>
+        <li><a href="products.html?cat=Chargers">Chargers</a></li>
+        <li><a href="products.html?cat=PowerBank">Power Banks</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="#">Press</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Support</h4>
+      <ul>
+        <li><a href="#">Track Order</a></li>
+        <li><a href="#">Returns</a></li>
+        <li><a href="#">Warranty</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copy">Â© 2025 SConnect Accessories. All rights reserved. | Hyderabad, India</p>
+    <div class="footer-socials">
+      <a class="fsoc">In</a><a class="fsoc">Fb</a><a class="fsoc">Yt</a><a class="fsoc">Tw</a>
+    </div>
+  </div>
+</footer>
+
+<button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">â†‘</button>
+
+<script src="js/data.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/main.js"></script>
+<script>
+  function submitForm() {
+    const firstName = document.getElementById('firstName').value.trim();
+    const email = document.getElementById('email').value.trim();
+    if (!firstName || !email) {
+      showToast('Please fill in your name and email.');
+      return;
+    }
+    const success = document.getElementById('formSuccess');
+    success.classList.add('show');
+    setTimeout(() => success.classList.remove('show'), 4000);
+  }
+
+  updateCartUI();
+</script>
+</body>
+</html>

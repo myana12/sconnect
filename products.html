@@ -1,0 +1,234 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All Products â€“ SConnect Accessories</title>
+  <meta name="description" content="Shop all SConnect premium mobile accessories â€” earphones, cables, chargers, power banks and phone cases.">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- â”€â”€ NAVBAR â”€â”€ -->
+<nav id="navbar">
+  <a class="nav-logo" href="index.html">
+    <img src="photos/sconnects.jpg" alt="SConnect Mobile Accessories" class="nav-logo-img">
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="products.html" class="active">Products</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <button class="nav-icon-btn" title="Search">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    </button>
+    <button class="nav-icon-btn nav-cart" onclick="toggleCart()" title="Cart">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+      <span class="cart-count" id="cartCount">0</span>
+    </button>
+    <a href="products.html" class="btn-nav">Shop Now</a>
+  </div>
+</nav>
+
+<!-- â”€â”€ CART DRAWER â”€â”€ -->
+<div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+<div class="cart-drawer" id="cartDrawer">
+  <div class="cart-header">
+    <h3>YOUR CART</h3>
+    <button class="cart-close" onclick="toggleCart()">âœ•</button>
+  </div>
+  <div class="cart-items" id="cartItems">
+    <div class="cart-empty">
+      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" opacity="0.3"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+      <p>Your cart is empty</p>
+    </div>
+  </div>
+  <div class="cart-footer">
+    <div class="cart-subtotal">
+      <span>Subtotal</span>
+      <strong id="cartTotal">â‚¹0</strong>
+    </div>
+    <button class="btn-checkout" onclick="checkout()">Proceed to Checkout â†’</button>
+  </div>
+</div>
+
+<!-- â”€â”€ TOAST â”€â”€ -->
+<div class="toast" id="toast"><span class="toast-icon">âœ“</span><span id="toastMsg"></span></div>
+
+<!-- â”€â”€ PAGE CONTENT â”€â”€ -->
+<div class="products-page">
+  <div class="products-hero">
+    <h1>ALL PRODUCTS</h1>
+    <p>Explore our full range of premium mobile accessories</p>
+  </div>
+
+  <div class="products-layout">
+    <!-- Sidebar Filters -->
+    <div class="filters-sidebar">
+      <div class="filter-title">FILTERS</div>
+
+      <div class="filter-group">
+        <div class="filter-group-title">Category</div>
+        <div class="filter-options">
+          <label class="filter-opt"><input type="checkbox" value="Bluetooth" onchange="applyFilters()"><span>Bluetooth Earphones</span></label>
+          <label class="filter-opt"><input type="checkbox" value="WiredEarphones" onchange="applyFilters()"><span>Wired Earphones</span></label>
+          <label class="filter-opt"><input type="checkbox" value="Cables" onchange="applyFilters()"><span>Cables</span></label>
+          <label class="filter-opt"><input type="checkbox" value="Chargers" onchange="applyFilters()"><span>Chargers</span></label>
+          <label class="filter-opt"><input type="checkbox" value="PowerBank" onchange="applyFilters()"><span>Power Banks</span></label>
+        </div>
+      </div>
+
+      <div class="filter-group">
+        <div class="filter-group-title">Price Range (â‚¹)</div>
+        <div class="price-inputs">
+          <input class="price-input" type="number" id="priceMin" placeholder="0" value="0">
+          <span class="price-sep">â€“</span>
+          <input class="price-input" type="number" id="priceMax" placeholder="5000" value="5000">
+        </div>
+        <button class="filter-apply" onclick="applyFilters()">Apply</button>
+      </div>
+
+      <div class="filter-group">
+        <div class="filter-group-title">Rating</div>
+        <div class="filter-options">
+          <label class="filter-opt"><input type="checkbox" class="rating-cb" value="5" onchange="applyFilters()"><span>â˜…â˜…â˜…â˜…â˜… 5 Star</span></label>
+          <label class="filter-opt"><input type="checkbox" class="rating-cb" value="4" onchange="applyFilters()"><span>â˜…â˜…â˜…â˜…â˜† 4+ Star</span></label>
+        </div>
+      </div>
+    </div>
+
+    <!-- Products Main -->
+    <div class="products-main">
+      <div class="category-tabs">
+        <button class="cat-tab active" data-cat="All" onclick="setActiveTab(this,'All')">All</button>
+        <button class="cat-tab" data-cat="Bluetooth" onclick="setActiveTab(this,'Bluetooth')">Bluetooth</button>
+        <button class="cat-tab" data-cat="WiredEarphones" onclick="setActiveTab(this,'WiredEarphones')">Wired Earphones</button>
+        <button class="cat-tab" data-cat="Cables" onclick="setActiveTab(this,'Cables')">Cables</button>
+        <button class="cat-tab" data-cat="Chargers" onclick="setActiveTab(this,'Chargers')">Chargers</button>
+        <button class="cat-tab" data-cat="PowerBank" onclick="setActiveTab(this,'PowerBank')">Power Banks</button>
+      </div>
+
+      <div class="products-toolbar">
+        <div class="products-count">Showing <strong id="prodCount">0</strong> products</div>
+        <select class="sort-select" id="sortSelect" onchange="applyFilters()">
+          <option value="default">Sort: Featured</option>
+          <option value="price-asc">Price: Low to High</option>
+          <option value="price-desc">Price: High to Low</option>
+          <option value="rating">Highest Rated</option>
+          <option value="newest">Newest First</option>
+        </select>
+      </div>
+
+      <div class="all-products-grid" id="allProductsGrid"></div>
+    </div>
+  </div>
+</div>
+
+<!-- â”€â”€ FOOTER â”€â”€ -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="logo-wrap">
+        <img src="photos/sconnects.jpg" alt="SConnect Mobile Accessories" class="footer-logo-img">
+      </div>
+      <p>India's trusted mobile accessories brand. Connecting people to what matters most â€” quality, affordability &amp; reliability.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Products</h4>
+      <ul>
+        <li><a href="products.html?cat=Bluetooth">Bluetooth Earphones</a></li>
+        <li><a href="products.html?cat=WiredEarphones">Wired Earphones</a></li>
+        <li><a href="products.html?cat=Cables">Cables</a></li>
+        <li><a href="products.html?cat=Chargers">Chargers</a></li>
+        <li><a href="products.html?cat=PowerBank">Power Banks</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="#">Press</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Support</h4>
+      <ul>
+        <li><a href="#">Track Order</a></li>
+        <li><a href="#">Returns</a></li>
+        <li><a href="#">Warranty</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copy">Â© 2025 SConnect Accessories. All rights reserved. | Hyderabad, India</p>
+    <div class="footer-socials">
+      <a class="fsoc">In</a><a class="fsoc">Fb</a><a class="fsoc">Yt</a><a class="fsoc">Tw</a>
+    </div>
+  </div>
+</footer>
+
+<button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">â†‘</button>
+
+<script src="js/data.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/main.js"></script>
+<script>
+  let activeTab = 'All';
+
+  function applyFilters() {
+    const sort = document.getElementById('sortSelect').value;
+    const min  = parseInt(document.getElementById('priceMin').value) || 0;
+    const max  = parseInt(document.getElementById('priceMax').value) || 99999;
+    const cats = [...document.querySelectorAll('.filters-sidebar input[type=checkbox]:not(.rating-cb):checked')].map(c => c.value);
+    const ratings = [...document.querySelectorAll('.rating-cb:checked')].map(c => parseInt(c.value));
+
+    let list = [...products];
+    if (activeTab !== 'All') list = list.filter(p => p.cat === activeTab);
+    if (cats.length) list = list.filter(p => cats.includes(p.cat));
+    list = list.filter(p => p.price >= min && p.price <= max);
+    if (ratings.length) list = list.filter(p => ratings.includes(p.rating));
+
+    if (sort === 'price-asc')  list.sort((a, b) => a.price - b.price);
+    else if (sort === 'price-desc') list.sort((a, b) => b.price - a.price);
+    else if (sort === 'rating') list.sort((a, b) => b.rating - a.rating);
+    else if (sort === 'newest') list.sort((a, b) => b.id - a.id);
+
+    document.getElementById('prodCount').textContent = list.length;
+    const g = document.getElementById('allProductsGrid');
+    g.innerHTML = list.length
+      ? list.map(cardHTML).join('')
+      : `<div style="grid-column:1/-1;text-align:center;padding:60px 20px;color:var(--muted)">
+           <div style="font-size:40px;margin-bottom:12px">ðŸ”</div>
+           <div>No products match your filters.</div>
+         </div>`;
+  }
+
+  function setActiveTab(el, cat) {
+    document.querySelectorAll('.cat-tab').forEach(t => t.classList.remove('active'));
+    el.classList.add('active');
+    activeTab = cat;
+    applyFilters();
+  }
+
+  /* Read ?cat= URL param to pre-select a category */
+  (function initFromURL() {
+    const cat = new URLSearchParams(window.location.search).get('cat');
+    if (cat) {
+      activeTab = cat;
+      document.querySelectorAll('.cat-tab').forEach(t => {
+        t.classList.toggle('active', t.dataset.cat === cat);
+      });
+    }
+    applyFilters();
+  })();
+
+  updateCartUI();
+</script>
+</body>
+</html>

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us – SConnect Accessories</title>
+  <meta name="description" content="Learn about SConnect Accessories — founded in Hyderabad, serving 50,000+ customers across India with premium mobile accessories.">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ── NAVBAR ── -->
+<nav id="navbar">
+  <a class="nav-logo" href="index.html">
+    <img src="photos/sconnects.jpg" alt="S-Connect Mobile Accessories" class="nav-logo-img">
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="products.html">Products</a></li>
+    <li><a href="about.html" class="active">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <button class="nav-icon-btn" title="Search">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    </button>
+    <button class="nav-icon-btn nav-cart" onclick="toggleCart()" title="Cart">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+      <span class="cart-count" id="cartCount">0</span>
+    </button>
+    <a href="products.html" class="btn-nav">Shop Now</a>
+  </div>
+</nav>
+
+<!-- ── CART DRAWER ── -->
+<div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+<div class="cart-drawer" id="cartDrawer">
+  <div class="cart-header">
+    <h3>YOUR CART</h3>
+    <button class="cart-close" onclick="toggleCart()">✕</button>
+  </div>
+  <div class="cart-items" id="cartItems">
+    <div class="cart-empty">
+      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" opacity="0.3"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+      <p>Your cart is empty</p>
+    </div>
+  </div>
+  <div class="cart-footer">
+    <div class="cart-subtotal">
+      <span>Subtotal</span>
+      <strong id="cartTotal">₹0</strong>
+    </div>
+    <button class="btn-checkout" onclick="checkout()">Proceed to Checkout →</button>
+  </div>
+</div>
+
+<!-- ── TOAST ── -->
+<div class="toast" id="toast"><span class="toast-icon">✓</span><span id="toastMsg"></span></div>
+
+<!-- ── PAGE CONTENT ── -->
+<div class="about-page">
+
+  <!-- Hero -->
+  <div class="about-hero">
+    <div class="about-hero-content">
+      <h1>OUR <span>STORY</span><br>OUR MISSION.</h1>
+      <p>SConnect Accessories was born from 15 years of hands-on experience — a journey that began in a mobile repair shop and grew into a proudly Made-in-India manufacturing brand.</p>
+      <p>Founded in Hyderabad in 2018 by Myana Srinivas, we've earned the trust of thousands of customers with a product lineup that refuses to compromise on quality or price.</p>
+      <a href="contact.html" class="btn-primary" style="margin-top:20px">Get in Touch →</a>
+    </div>
+  </div>
+
+  <!-- Stats -->
+  <div class="about-stats">
+    <div class="about-stat"><div class="about-stat-num">2018</div><div class="about-stat-label">Founded</div></div>
+    <div class="about-stat"><div class="about-stat-num">500+</div><div class="about-stat-label">Products</div></div>
+    <div class="about-stat"><div class="about-stat-num">50K+</div><div class="about-stat-label">Customers</div></div>
+    <div class="about-stat"><div class="about-stat-num">28</div><div class="about-stat-label">States Served</div></div>
+  </div>
+
+  <!-- Story -->
+  <div class="about-story">
+    <div class="about-story-text">
+      <h2>QUALITY YOU <span>FEEL.</span></h2>
+      <p>SConnect was founded in 2018 by <strong>Myana Srinivas</strong>, a first-generation entrepreneur whose journey began long before the brand name existed. For nearly 15 years, Myana ran a mobile repair shop first known as <em>Idea Communications</em> and later rebranded as <em>Santhoshini Communications</em> — a name that became synonymous with trust, honest service, and deep technical expertise in Hyderabad's mobile accessories market.</p>
+      <p>Through those years of hands-on repair work, he earned the loyalty of thousands of customers who returned again and again — not just for fixes, but for genuine guidance on what accessories actually work. That ground-level experience taught him one thing clearly: quality mobile accessories shouldn't be a luxury.</p>
+      <p>In 2018, Myana took a defining step — transforming years of industry knowledge into a manufacturing venture. Under the <strong>Made in India</strong> label, SConnect began producing its own line of mobile accessories: charging adapters, data cables, power banks, earphones, and more. Every product carried the same promise he had built his reputation on — reliability you can feel, at a price that makes sense.</p>
+      <p>Today, SConnect stands as a brand built not in a boardroom, but on the workshop floor — shaped by real customers, real problems, and a founder who never stopped listening.</p>
+    </div>
+    <div class="about-story-visual">
+      <div style="text-align:center">
+        <div style="font-family:var(--font-display);font-size:120px;line-height:1;color:rgba(255,59,0,0.08);letter-spacing:4px">SC</div>
+        <div style="font-family:var(--font-display);font-size:28px;letter-spacing:4px;color:rgba(255,255,255,0.15)">SCONNECT</div>
+        <div style="font-size:12px;color:var(--muted);letter-spacing:2px;margin-top:8px;text-transform:uppercase">ACCESSORIES</div>
+        <div style="display:flex;gap:24px;justify-content:center;margin-top:36px">
+          <div style="text-align:center">
+            <div style="font-family:var(--font-display);font-size:28px;color:var(--primary)">ISO</div>
+            <div style="font-size:10px;color:var(--muted);letter-spacing:1px">9001:2015</div>
+          </div>
+          <div style="width:1px;background:var(--border)"></div>
+          <div style="text-align:center">
+            <div style="font-family:var(--font-display);font-size:28px;color:var(--primary)">BIS</div>
+            <div style="font-size:10px;color:var(--muted);letter-spacing:1px">CERTIFIED</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Values -->
+  <div class="section" style="background:var(--dark2);padding-top:80px;padding-bottom:80px">
+    <div class="section-label">What We Stand For</div>
+    <div class="section-title">OUR <span class="dim">VALUES</span></div>
+    <div class="values-grid">
+      <div class="value-card">
+        <div class="value-icon"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+        <div class="value-title">Uncompromising Quality</div>
+        <div class="value-desc">Every product passes 20+ quality checks. We test tensile strength, thermal performance, signal clarity and drop resistance before shipping.</div>
+      </div>
+      <div class="value-card">
+        <div class="value-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <div class="value-title">Safety First</div>
+        <div class="value-desc">BIS certified and compliant with all Indian safety standards. Our chargers feature over-voltage, over-current and short-circuit protection.</div>
+      </div>
+      <div class="value-card">
+        <div class="value-icon"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></div>
+        <div class="value-title">Customer First</div>
+        <div class="value-desc">1-year warranty, 15-day returns, and a support team that answers in under 2 hours. Customers are at the centre of everything we do.</div>
+      </div>
+      <div class="value-card">
+        <div class="value-icon"><svg viewBox="0 0 24 24"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div>
+        <div class="value-title">Honest Pricing</div>
+        <div class="value-desc">No inflated MRP games. We work with manufacturers directly so you pay for the product, not the marketing.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Team -->
+  <section class="team-section">
+    <div class="section-label">The Team</div>
+    <div class="section-title">MEET THE <span class="dim">PEOPLE</span></div>
+    <div class="team-grid">
+      <div class="team-card"><div class="team-img"><div class="team-avatar">MS</div></div><div class="team-info"><div class="team-name">Myana Srinivas</div><div class="team-role">Founder &amp; CEO</div></div></div>
+      <div class="team-card"><div class="team-img"><div class="team-avatar">AN</div></div><div class="team-info"><div class="team-name">Ananya Nair</div><div class="team-role">Head of Design</div></div></div>
+      <div class="team-card"><div class="team-img"><div class="team-avatar">RV</div></div><div class="team-info"><div class="team-name">Ravi Verma</div><div class="team-role">Head of Operations</div></div></div>
+      <div class="team-card"><div class="team-img"><div class="team-avatar">PS</div></div><div class="team-info"><div class="team-name">Pooja Sharma</div><div class="team-role">Customer Success</div></div></div>
+    </div>
+  </section>
+
+</div>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="logo-wrap">
+        <img src="photos/sconnects.jpg" alt="SConnect Mobile Accessories" class="footer-logo-img">
+      </div>
+      <p>India's trusted mobile accessories brand. Connecting people to what matters most — quality, affordability &amp; reliability.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Products</h4>
+      <ul>
+        <li><a href="products.html?cat=Bluetooth">Bluetooth Earphones</a></li>
+        <li><a href="products.html?cat=WiredEarphones">Wired Earphones</a></li>
+        <li><a href="products.html?cat=Cables">Cables</a></li>
+        <li><a href="products.html?cat=Chargers">Chargers</a></li>
+        <li><a href="products.html?cat=PowerBank">Power Banks</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="#">Press</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Support</h4>
+      <ul>
+        <li><a href="#">Track Order</a></li>
+        <li><a href="#">Returns</a></li>
+        <li><a href="#">Warranty</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copy">© 2025 SConnect Accessories. All rights reserved. | Hyderabad, India</p>
+    <div class="footer-socials">
+      <a class="fsoc">In</a><a class="fsoc">Fb</a><a class="fsoc">Yt</a><a class="fsoc">Tw</a>
+    </div>
+  </div>
+</footer>
+
+<button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script src="js/data.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/main.js"></script>
+<script>updateCartUI();</script>
+</body>
+</html>

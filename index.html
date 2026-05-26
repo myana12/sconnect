@@ -1,0 +1,290 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SConnect Accessories â€“ Premium Mobile Accessories India</title>
+  <meta name="description" content="India's trusted mobile accessories brand. Earphones, cables, chargers, power banks & cases. Premium quality, honest pricing.">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- â”€â”€ NAVBAR â”€â”€ -->
+<nav id="navbar">
+  <a class="nav-logo" href="index.html">
+    <img src="photos/sconnects.jpg" alt="SConnect Mobile Accessories" class="nav-logo-img">
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="products.html">Products</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <button class="nav-icon-btn" title="Search">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    </button>
+    <button class="nav-icon-btn nav-cart" onclick="toggleCart()" title="Cart">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+      <span class="cart-count" id="cartCount">0</span>
+    </button>
+    <a href="products.html" class="btn-nav">Shop Now</a>
+  </div>
+</nav>
+
+<!-- â”€â”€ CART DRAWER â”€â”€ -->
+<div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+<div class="cart-drawer" id="cartDrawer">
+  <div class="cart-header">
+    <h3>YOUR CART</h3>
+    <button class="cart-close" onclick="toggleCart()">âœ•</button>
+  </div>
+  <div class="cart-items" id="cartItems">
+    <div class="cart-empty">
+      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" opacity="0.3"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+      <p>Your cart is empty</p>
+    </div>
+  </div>
+  <div class="cart-footer">
+    <div class="cart-subtotal">
+      <span>Subtotal</span>
+      <strong id="cartTotal">â‚¹0</strong>
+    </div>
+    <button class="btn-checkout" onclick="checkout()">Proceed to Checkout â†’</button>
+  </div>
+</div>
+
+<!-- â”€â”€ TOAST â”€â”€ -->
+<div class="toast" id="toast"><span class="toast-icon">âœ“</span><span id="toastMsg"></span></div>
+
+<!-- â”€â”€ HERO â”€â”€ -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-badge">New Collection 2025</div>
+    <h1 class="hero-title">STAY<span class="accent">CONNECTED</span>ALWAYS.</h1>
+    <p class="hero-sub">Premium mobile accessories built for India â€” earphones, cables, chargers &amp; more. Engineered to last, priced to love.</p>
+    <div class="hero-cta">
+      <a href="products.html" class="btn-primary">Explore Products â†’</a>
+    </div>
+    <div class="hero-stats">
+      <div><div class="stat-num">500<span style="color:var(--primary)">+</span></div><div class="stat-label">Products</div></div>
+      <div><div class="stat-num">50K<span style="color:var(--primary)">+</span></div><div class="stat-label">Customers</div></div>
+      <div><div class="stat-num">4.8<span style="color:var(--primary)">â˜…</span></div><div class="stat-label">Avg Rating</div></div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-bg-glow"></div>
+    <div class="hero-product-visual">
+      <div class="hero-slideshow" id="heroSlideshow">
+        <div class="hero-slide active"><img src="headpics/h1.png" alt="Chargers"></div>
+        <div class="hero-slide"><img src="headpics/h2.png" alt="Chargers"></div>
+        <div class="hero-slide"><img src="headpics/h3.png" alt="Chargers"></div>
+        <div class="hero-slide"><img src="headpics/h4.png" alt="Chargers"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- â”€â”€ MARQUEE â”€â”€ -->
+<div class="marquee-strip">
+  <div class="marquee-inner">
+    <span class="marquee-item">EARPHONES</span><span class="marquee-item marquee-dot">â—</span>
+    <span class="marquee-item">FAST CHARGING</span><span class="marquee-item marquee-dot">â—</span>
+    <span class="marquee-item">DATA CABLES</span><span class="marquee-item marquee-dot">â—</span>
+    <span class="marquee-item">POWER BANKS</span><span class="marquee-item marquee-dot">â—</span>
+    <span class="marquee-item">WIRELESS AUDIO</span><span class="marquee-item marquee-dot">â—</span>
+    <span class="marquee-item">PHONE CASES</span><span class="marquee-item marquee-dot">â—</span>
+    <span class="marquee-item">SMARTWATCHES</span><span class="marquee-item marquee-dot">â—</span>
+    <span class="marquee-item">ADAPTERS</span><span class="marquee-item marquee-dot">â—</span>
+    <span class="marquee-item">EARPHONES</span><span class="marquee-item marquee-dot">â—</span>
+    <span class="marquee-item">FAST CHARGING</span><span class="marquee-item marquee-dot">â—</span>
+    <span class="marquee-item">DATA CABLES</span><span class="marquee-item marquee-dot">â—</span>
+    <span class="marquee-item">POWER BANKS</span><span class="marquee-item marquee-dot">â—</span>
+    <span class="marquee-item">WIRELESS AUDIO</span><span class="marquee-item marquee-dot">â—</span>
+    <span class="marquee-item">PHONE CASES</span><span class="marquee-item marquee-dot">â—</span>
+    <span class="marquee-item">SMARTWATCHES</span><span class="marquee-item marquee-dot">â—</span>
+    <span class="marquee-item">ADAPTERS</span><span class="marquee-item marquee-dot">â—</span>
+  </div>
+</div>
+
+<!-- â”€â”€ CATEGORIES â”€â”€ -->
+<section class="section" style="background:var(--dark)">
+  <div class="section-label">Browse by Category</div>
+  <div class="section-title">SHOP BY <span class="dim">TYPE</span></div>
+  <div class="categories-grid">
+    <div class="cat-card" onclick="filterAndGo('Bluetooth')">
+      <div class="cat-icon">
+        <svg viewBox="0 0 24 24"><path d="M6.5 6.5l11 11L12 23V1l5.5 5.5-11 11"/></svg>
+      </div>
+      <div class="cat-name">Bluetooth Earphones</div>
+      <div class="cat-count">90+ Products</div>
+    </div>
+    <div class="cat-card" onclick="filterAndGo('WiredEarphones')">
+      <div class="cat-icon">
+        <svg viewBox="0 0 24 24"><path d="M9 3H7a2 2 0 00-2 2v4a2 2 0 002 2h2V3z"/><path d="M15 3h2a2 2 0 012 2v4a2 2 0 01-2 2h-2V3z"/><path d="M9 11v2a3 3 0 006 0v-2"/></svg>
+      </div>
+      <div class="cat-name">Wired Earphones</div>
+      <div class="cat-count">30+ Products</div>
+    </div>
+    <div class="cat-card" onclick="filterAndGo('Cables')">
+      <div class="cat-icon">
+        <svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M12 5v14"/><circle cx="5" cy="12" r="3"/><circle cx="19" cy="12" r="3"/></svg>
+      </div>
+      <div class="cat-name">Cables &amp; Adapters</div>
+      <div class="cat-count">80+ Products</div>
+    </div>
+    <div class="cat-card" onclick="filterAndGo('Chargers')">
+      <div class="cat-icon">
+        <svg viewBox="0 0 24 24"><path d="M5 18H3a2 2 0 01-2-2V8a2 2 0 012-2h3.19M15 6h2a2 2 0 012 2v8a2 2 0 01-2 2h-3.19"/><line x1="23" y1="13" x2="23" y2="11"/><polyline points="11 6 7 12 13 12 9 18"/></svg>
+      </div>
+      <div class="cat-name">Chargers &amp; Power</div>
+      <div class="cat-count">65+ Products</div>
+    </div>
+    <div class="cat-card" onclick="filterAndGo('Cases')">
+      <div class="cat-icon">
+        <svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+      </div>
+      <div class="cat-name">Phone Cases</div>
+      <div class="cat-count">200+ Products</div>
+    </div>
+  </div>
+</section>
+
+<!-- â”€â”€ BEST SELLERS â”€â”€ -->
+<section class="products-section">
+  <div class="section-header">
+    <div>
+      <div class="section-label">Hot Right Now</div>
+      <div class="section-title" style="margin-bottom:0">BEST <span class="dim">SELLERS</span></div>
+    </div>
+    <a href="products.html" class="btn-ghost" style="white-space:nowrap">View All â†’</a>
+  </div>
+  <div class="products-grid" id="homeFeatured"></div>
+</section>
+
+<!-- â”€â”€ WHY US â”€â”€ -->
+<section class="why-section">
+  <div class="why-grid">
+    <div>
+      <div class="section-label">Why Choose Us</div>
+      <div class="section-title">BUILT FOR <span class="dim">INDIA.</span></div>
+      <div class="why-items">
+        <div class="why-item">
+          <div class="why-num">01</div>
+          <div><div class="why-item-title">Premium Quality, Indian Price</div><div class="why-item-desc">Every product is rigorously tested for durability. No compromise on materials â€” just honest pricing for the Indian market.</div></div>
+        </div>
+        <div class="why-item">
+          <div class="why-num">02</div>
+          <div><div class="why-item-title">Fast Delivery Across India</div><div class="why-item-desc">Pan-India shipping with 2â€“5 day delivery. Same-day dispatch on orders before 2 PM.</div></div>
+        </div>
+        <div class="why-item">
+          <div class="why-num">03</div>
+          <div><div class="why-item-title">1-Year Warranty on All Products</div><div class="why-item-desc">Every SConnect product comes with a hassle-free 1-year warranty and dedicated customer support.</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="why-right">
+      <div class="spec-card"><div class="spec-val">120<span class="spec-unit">W</span></div><div class="spec-desc">Max Fast Charge</div></div>
+      <div class="spec-card"><div class="spec-val">40<span class="spec-unit">H</span></div><div class="spec-desc">Battery Life</div></div>
+      <div class="spec-card"><div class="spec-val">BT<span class="spec-unit" style="font-size:20px"> 5.3</span></div><div class="spec-desc">Latest Bluetooth</div></div>
+      <div class="spec-card"><div class="spec-val">IP<span class="spec-unit">54</span></div><div class="spec-desc">Water Resistant</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- â”€â”€ REVIEWS â”€â”€ -->
+<section class="reviews-section">
+  <div class="section-header">
+    <div>
+      <div class="section-label">Happy Customers</div>
+      <div class="section-title" style="margin-bottom:0">WHAT THEY <span class="dim">SAY</span></div>
+    </div>
+  </div>
+  <div class="reviews-grid">
+    <div class="review-card">
+      <div class="review-stars">â˜…â˜…â˜…â˜…â˜…</div>
+      <p class="review-text">"The TWS earphones are incredible. Sound quality rivals brands that cost 3x the price. Battery lasts all day easily."</p>
+      <div class="review-author"><div class="review-avatar">R</div><div><div class="review-name">Rahul Sharma</div><div class="review-location">Hyderabad, TS</div></div></div>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">â˜…â˜…â˜…â˜…â˜…</div>
+      <p class="review-text">"Finally a cable that doesn't break after a month. The 120W braided cable charges my laptop super fast. Highly recommended!"</p>
+      <div class="review-author"><div class="review-avatar" style="background:#0066FF">P</div><div><div class="review-name">Priya Nair</div><div class="review-location">Bangalore, KA</div></div></div>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">â˜…â˜…â˜…â˜…â˜…</div>
+      <p class="review-text">"The GaN charger is so compact yet charges everything so fast. Replaced my entire charging setup with just this one device!"</p>
+      <div class="review-author"><div class="review-avatar" style="background:#FFB800;color:#000">A</div><div><div class="review-name">Arjun Mehta</div><div class="review-location">Mumbai, MH</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- â”€â”€ FOOTER â”€â”€ -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="logo-wrap">
+        <img src="photos/sconnects.jpg" alt="SConnect Mobile Accessories" class="footer-logo-img">
+      </div>
+      <p>India's trusted mobile accessories brand. Connecting people to what matters most â€” quality, affordability &amp; reliability.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Products</h4>
+      <ul>
+        <li><a href="products.html?cat=Bluetooth">Bluetooth Earphones</a></li>
+        <li><a href="products.html?cat=WiredEarphones">Wired Earphones</a></li>
+        <li><a href="products.html?cat=Cables">Cables</a></li>
+        <li><a href="products.html?cat=Chargers">Chargers</a></li>
+        <li><a href="products.html?cat=PowerBank">Power Banks</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="#">Press</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Support</h4>
+      <ul>
+        <li><a href="#">Track Order</a></li>
+        <li><a href="#">Returns</a></li>
+        <li><a href="#">Warranty</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copy">Â© 2025 SConnect Accessories. All rights reserved. | Hyderabad, India</p>
+    <div class="footer-socials">
+      <a class="fsoc">In</a><a class="fsoc">Fb</a><a class="fsoc">Yt</a><a class="fsoc">Tw</a>
+    </div>
+  </div>
+</footer>
+
+<button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">â†‘</button>
+
+<script src="js/data.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/main.js"></script>
+<script>
+  document.getElementById('homeFeatured').innerHTML =
+    products.filter(p => p.featured).map(cardHTML).join('');
+  updateCartUI();
+
+  /* â”€â”€ Hero Slideshow â”€â”€ */
+  const heroSlides = document.querySelectorAll('#heroSlideshow .hero-slide');
+  let heroCurrent  = 0;
+
+  setInterval(() => {
+    heroSlides[heroCurrent].classList.remove('active');
+    heroCurrent = (heroCurrent + 1) % heroSlides.length;
+    heroSlides[heroCurrent].classList.add('active');
+  }, 3000);
+</script>
+</body>
+</html>
