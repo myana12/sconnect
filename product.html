@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Product â€“ SConnect Accessories</title>
-  <meta name="description" content="Product details â€“ SConnect Accessories">
+  <title>Product  SConnect Accessories</title>
+  <meta name="description" content="Product details – SConnect Accessories">
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
@@ -38,7 +38,7 @@
 <div class="cart-drawer" id="cartDrawer">
   <div class="cart-header">
     <h3>YOUR CART</h3>
-    <button class="cart-close" onclick="toggleCart()">âœ•</button>
+    <button class="cart-close" onclick="toggleCart()">✕</button>
   </div>
   <div class="cart-items" id="cartItems">
     <div class="cart-empty">
@@ -49,14 +49,14 @@
   <div class="cart-footer">
     <div class="cart-subtotal">
       <span>Subtotal</span>
-      <strong id="cartTotal">â‚¹0</strong>
+      <strong id="cartTotal"></strong>
     </div>
-    <button class="btn-checkout" onclick="checkout()">Proceed to Checkout â†’</button>
+    <button class="btn-checkout" onclick="checkout()">Proceed to Checkout</button>
   </div>
 </div>
 
 <!-- â”€â”€ TOAST â”€â”€ -->
-<div class="toast" id="toast"><span class="toast-icon">âœ“</span><span id="toastMsg"></span></div>
+<div class="toast" id="toast"><span class="toast-icon"></span><span id="toastMsg"></span></div>
 
 <!-- â”€â”€ PRODUCT DETAIL â”€â”€ -->
 <div class="detail-page">
@@ -64,10 +64,10 @@
   <!-- Breadcrumb -->
   <div class="detail-breadcrumb">
     <a href="products.html">Products</a>
-    <span>â€º</span>
-    <span id="bc-cat">â€”</span>
-    <span>â€º</span>
-    <span id="bc-name">â€”</span>
+    <span></span>
+    <span id="bc-cat"></span>
+    <span></span>
+    <span id="bc-name"></span>
   </div>
 
   <!-- Main Layout -->
@@ -96,7 +96,7 @@
 
       <div class="detail-actions">
         <div class="detail-qty">
-          <button class="detail-qty-btn" id="detail-qty-dec">âˆ’</button>
+          <button class="detail-qty-btn" id="detail-qty-dec"></button>
           <input class="detail-qty-num" id="detail-qty-num" type="number" value="1" min="1" readonly>
           <button class="detail-qty-btn" id="detail-qty-inc">+</button>
         </div>
@@ -161,14 +161,14 @@
     </div>
   </div>
   <div class="footer-bottom">
-    <p class="footer-copy">Â© 2025 SConnect Accessories. All rights reserved. | Hyderabad, India</p>
+    <p class="footer-copy">© 2025 SConnect Accessories. All rights reserved. | Hyderabad, India</p>
     <div class="footer-socials">
       <a class="fsoc">In</a><a class="fsoc">Fb</a><a class="fsoc">Yt</a><a class="fsoc">Tw</a>
     </div>
   </div>
 </footer>
 
-<button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">â†‘</button>
+<button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})"></button>
 
 <script src="js/data.js"></script>
 <script src="js/cart.js"></script>
@@ -181,7 +181,7 @@
   if (!p) { window.location = 'products.html'; return; }
 
   /* Page title */
-  document.title = p.name + ' â€“ SConnect Accessories';
+  document.title = p.name + ' S-Connect Accessories';
 
   /* Breadcrumb */
   document.getElementById('bc-cat').textContent  = p.cat;
@@ -212,15 +212,15 @@
 
   /* Stars */
   document.getElementById('detail-stars').textContent =
-    'â˜…'.repeat(p.rating) + 'â˜†'.repeat(5 - p.rating) + '  (' + p.rating + '.0)';
+    '★'.repeat(p.rating) + '☆'.repeat(5 - p.rating) + '  (' + p.rating + '.0)';
 
   /* Price */
   document.getElementById('detail-price').innerHTML =
-    `<span class="currency">â‚¹</span>${p.price.toLocaleString('en-IN')}` +
-    (p.old ? `<span class="old">â‚¹${p.old.toLocaleString('en-IN')}</span>` : '');
+    `<span class="currency">₹</span>${p.price.toLocaleString('en-IN')}` +
+    (p.old ? `<span class="old">₹${p.old.toLocaleString('en-IN')}</span>` : '');
 
-  /* Features â€” split description by Â· */
-  const features = p.desc.split(' Â· ').map(f => f.trim()).filter(Boolean);
+  /* Features â€” split description by · */
+  const features = p.desc.split(' · ').map(f => f.trim()).filter(Boolean);
   document.getElementById('detail-features').innerHTML =
     features.map(f => `<li>${f}</li>`).join('');
 

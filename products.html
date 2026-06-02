@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>All Products â€“ SConnect Accessories</title>
-  <meta name="description" content="Shop all SConnect premium mobile accessories â€” earphones, cables, chargers, power banks and phone cases.">
+  <title>All Products S-Connect Accessories</title>
+  <meta name="description" content="Shop all SConnect premium mobile accessories – earphones, cables, chargers, power banks and phone cases.">
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
@@ -38,7 +38,7 @@
 <div class="cart-drawer" id="cartDrawer">
   <div class="cart-header">
     <h3>YOUR CART</h3>
-    <button class="cart-close" onclick="toggleCart()">âœ•</button>
+    <button class="cart-close" onclick="toggleCart()">✕</button>
   </div>
   <div class="cart-items" id="cartItems">
     <div class="cart-empty">
@@ -49,14 +49,14 @@
   <div class="cart-footer">
     <div class="cart-subtotal">
       <span>Subtotal</span>
-      <strong id="cartTotal">â‚¹0</strong>
+      <strong id="cartTotal"></strong>
     </div>
-    <button class="btn-checkout" onclick="checkout()">Proceed to Checkout â†’</button>
+    <button class="btn-checkout" onclick="checkout()">Proceed to Checkout →</button>
   </div>
 </div>
 
 <!-- â”€â”€ TOAST â”€â”€ -->
-<div class="toast" id="toast"><span class="toast-icon">âœ“</span><span id="toastMsg"></span></div>
+<div class="toast" id="toast"><span class="toast-icon"></span><span id="toastMsg"></span></div>
 
 <!-- â”€â”€ PAGE CONTENT â”€â”€ -->
 <div class="products-page">
@@ -82,10 +82,10 @@
       </div>
 
       <div class="filter-group">
-        <div class="filter-group-title">Price Range (â‚¹)</div>
+        <div class="filter-group-title">Price Range (₹)</div>
         <div class="price-inputs">
           <input class="price-input" type="number" id="priceMin" placeholder="0" value="0">
-          <span class="price-sep">â€“</span>
+          <span class="price-sep"></span>
           <input class="price-input" type="number" id="priceMax" placeholder="5000" value="5000">
         </div>
         <button class="filter-apply" onclick="applyFilters()">Apply</button>
@@ -94,8 +94,8 @@
       <div class="filter-group">
         <div class="filter-group-title">Rating</div>
         <div class="filter-options">
-          <label class="filter-opt"><input type="checkbox" class="rating-cb" value="5" onchange="applyFilters()"><span>â˜…â˜…â˜…â˜…â˜… 5 Star</span></label>
-          <label class="filter-opt"><input type="checkbox" class="rating-cb" value="4" onchange="applyFilters()"><span>â˜…â˜…â˜…â˜…â˜† 4+ Star</span></label>
+          <label class="filter-opt"><input type="checkbox" class="rating-cb" value="5" onchange="applyFilters()"><span>★★★★★ 5 Star</span></label>
+          <label class="filter-opt"><input type="checkbox" class="rating-cb" value="4" onchange="applyFilters()"><span>★★★★☆ 4+ Star</span></label>
         </div>
       </div>
     </div>
@@ -134,7 +134,7 @@
       <div class="logo-wrap">
         <img src="photos/sconnects.jpg" alt="SConnect Mobile Accessories" class="footer-logo-img">
       </div>
-      <p>India's trusted mobile accessories brand. Connecting people to what matters most â€” quality, affordability &amp; reliability.</p>
+      <p>India's trusted mobile accessories brand. Connecting people to what matters most – quality, affordability &amp; reliability.</p>
     </div>
     <div class="footer-col">
       <h4>Products</h4>
@@ -166,7 +166,7 @@
     </div>
   </div>
   <div class="footer-bottom">
-    <p class="footer-copy">Â© 2025 SConnect Accessories. All rights reserved. | Hyderabad, India</p>
+    <p class="footer-copy">© 2025 SConnect Accessories. All rights reserved. | Hyderabad, India</p>
     <div class="footer-socials">
       <a class="fsoc">In</a><a class="fsoc">Fb</a><a class="fsoc">Yt</a><a class="fsoc">Tw</a>
     </div>
@@ -204,7 +204,7 @@
     g.innerHTML = list.length
       ? list.map(cardHTML).join('')
       : `<div style="grid-column:1/-1;text-align:center;padding:60px 20px;color:var(--muted)">
-           <div style="font-size:40px;margin-bottom:12px">ðŸ”</div>
+           <div style="font-size:40px;margin-bottom:12px">🔍</div>
            <div>No products match your filters.</div>
          </div>`;
   }

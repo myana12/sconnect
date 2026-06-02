@@ -3,10 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact Us â€“ SConnect Accessories</title>
+  <title>Contact Us S-Connect Accessories</title>
   <meta name="description" content="Get in touch with SConnect Accessories for product queries, bulk orders, warranty support or partnerships.">
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </head>
 <body>
 
@@ -38,7 +39,7 @@
 <div class="cart-drawer" id="cartDrawer">
   <div class="cart-header">
     <h3>YOUR CART</h3>
-    <button class="cart-close" onclick="toggleCart()">âœ•</button>
+    <button class="cart-close" onclick="toggleCart()">✕</button>
   </div>
   <div class="cart-items" id="cartItems">
     <div class="cart-empty">
@@ -49,21 +50,21 @@
   <div class="cart-footer">
     <div class="cart-subtotal">
       <span>Subtotal</span>
-      <strong id="cartTotal">â‚¹0</strong>
+      <strong id="cartTotal"></strong>
     </div>
-    <button class="btn-checkout" onclick="checkout()">Proceed to Checkout â†’</button>
+    <button class="btn-checkout" onclick="checkout()">Proceed to Checkout →</button>
   </div>
 </div>
 
 <!-- â”€â”€ TOAST â”€â”€ -->
-<div class="toast" id="toast"><span class="toast-icon">âœ“</span><span id="toastMsg"></span></div>
+<div class="toast" id="toast"><span class="toast-icon"></span><span id="toastMsg"></span></div>
 
 <!-- â”€â”€ PAGE CONTENT â”€â”€ -->
 <div class="contact-page">
 
   <div class="contact-hero">
     <h1>GET IN <span>TOUCH</span></h1>
-    <p>We'd love to hear from you â€” product queries, bulk orders, or just say hello.</p>
+    <p>We'd love to hear from you product queries, bulk orders, or just say hello.</p>
   </div>
 
   <div class="contact-layout">
@@ -78,7 +79,7 @@
         </div>
         <div>
           <div class="contact-item-title">Address</div>
-          <div class="contact-item-val">Flat no.11 Satyanagar<br>O.U.Road Vidyanagar , Hyderabad â€“ 500044</div>
+          <div class="contact-item-val">Flat no.11 Satyanagar<br>O.U.Road Vidyanagar , Hyderabad – 500044</div>
         </div>
       </div>
 
@@ -108,7 +109,7 @@
         </div>
         <div>
           <div class="contact-item-title">Support Hours</div>
-          <div class="contact-item-val">Mon â€“ Sat: 9 AM â€“ 7 PM IST</div>
+          <div class="contact-item-val">Mon to Sat: 9 AM to 7 PM IST</div>
         </div>
       </div>
 
@@ -151,7 +152,7 @@
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
       </button>
 
-      <div class="form-success" id="formSuccess">âœ“ Message sent! We'll get back to you within 2 hours.</div>
+      <div class="form-success" id="formSuccess">✓ Message sent! We'll get back to you within 2 hours.</div>
     </div>
 
   </div>
@@ -196,7 +197,7 @@
     </div>
   </div>
   <div class="footer-bottom">
-    <p class="footer-copy">Â© 2025 SConnect Accessories. All rights reserved. | Hyderabad, India</p>
+    <p class="footer-copy">© 2025 SConnect Accessories. All rights reserved. | Hyderabad, India</p>
     <div class="footer-socials">
       <a class="fsoc">In</a><a class="fsoc">Fb</a><a class="fsoc">Yt</a><a class="fsoc">Tw</a>
     </div>
@@ -209,16 +210,35 @@
 <script src="js/cart.js"></script>
 <script src="js/main.js"></script>
 <script>
+  emailjs.init('wiVpt_aokRp6CC6xg');
+
   function submitForm() {
     const firstName = document.getElementById('firstName').value.trim();
-    const email = document.getElementById('email').value.trim();
+    const lastName  = document.getElementById('lastName').value.trim();
+    const email     = document.getElementById('email').value.trim();
+    const phone     = document.getElementById('phone').value.trim();
+    const subject   = document.getElementById('subject').value.trim();
+    const message   = document.getElementById('message').value.trim();
+
     if (!firstName || !email) {
       showToast('Please fill in your name and email.');
       return;
     }
-    const success = document.getElementById('formSuccess');
-    success.classList.add('show');
-    setTimeout(() => success.classList.remove('show'), 4000);
+
+    emailjs.send('service_a6zjj5q', 'template_rre7xc8', {
+      name    : firstName + ' ' + lastName,
+      email   : email,
+      phone   : phone || 'Not provided',
+      title   : subject,
+      message : message
+    }).then(() => {
+      const success = document.getElementById('formSuccess');
+      success.classList.add('show');
+      setTimeout(() => success.classList.remove('show'), 4000);
+    }).catch((error) => {
+      console.error('EmailJS Error:', error);
+      showToast('Failed to send. Please try again.');
+    });
   }
 
   updateCartUI();
